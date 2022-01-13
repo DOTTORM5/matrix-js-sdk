@@ -269,7 +269,8 @@ export class CallEventHandler {
             return;
         }
         // Ignore remote echo
-        if (event.getContent().party_id === call.ourPartyId) return;
+        console.log('Received Answer')
+        if ((event.getContent().party_id !== null) && (event.getContent().party_id === call.ourPartyId)) return;
 
         switch (type) {
             case EventType.CallAnswer:
